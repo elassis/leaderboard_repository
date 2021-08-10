@@ -1,8 +1,8 @@
 import './style.css';
 import renderLayout from './layout.js';
 
-function component() {
+let component = () => {
   renderLayout();
 }
 
-window.onload = component();
+component();
