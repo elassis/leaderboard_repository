@@ -61,7 +61,8 @@ form {
   box-sizing: border-box;
 }
 
-input[type="text"],input[type="number"] {
+input[type="text"],
+input[type="number"] {
   width: 67%;
   margin: 10px auto;
   padding: 6px;
@@ -75,14 +76,15 @@ input[type="submit"] {
   margin: 10px auto;
 }
 
-#mssg{
+#mssg {
   width: 50%;
   margin: auto;
   background-color: rgb(91, 223, 135);
-  color:green;
+  color: green;
   padding: 10px;
   text-align: center;
 }
-.show{
+
+.show {
   display: none;
 }

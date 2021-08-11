@@ -1,55 +1,53 @@
-function getScoresFromApi(){
+function getScoresFromApi() {
   const resp = fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/XR8Xsx8fKmg97cQOTiMP/scores')
-  .then(response => response.json())
-  .then(json => json);
+    .then((response) => response.json())
+    .then((json) => json);
   return resp;
-  
 }
-function setScoresInApi(user, score){
-  // console.log(user +' '+ score)  
+function setScoresInApi(user, score) {
+  // console.log(user +' '+ score)
   const resp = fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/XR8Xsx8fKmg97cQOTiMP/scores', {
-  method: 'POST',
-  body: JSON.stringify({
-    user: user,
-    score: score
-  }),
-  headers: {
-    'Content-type': 'application/json; charset=UTF-8',
-  },
-})
-  .then((response) => response.json())
-  .then((json) => json);
+    method: 'POST',
+    body: JSON.stringify({
+      user,
+      score,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => json);
 
   return resp;
-
 }
 
 async function asyncGetScores() {
-  //get the table in the document to place the elements
+  // get the table in the document to place the elements
   const table = document.querySelectorAll('table');
-  table[0].innerHTML ='';
-  //call the function to get the scores of the leaderBoard API
+  table[0].innerHTML = '';
+  // call the function to get the scores of the leaderBoard API
   const response = await getScoresFromApi();
-  const arr = Array.from(response['result']);
-  arr.forEach((item,i)=>{
-    const value = (i % 2 == 0) ? 'even':'odd';
-     const elem = `<tr id="${value}">
+  const arr = Array.from(response.result);
+  arr.forEach((item, i) => {
+    const value = (i % 2 === 0) ? 'even' : 'odd';
+    const elem = `<tr id="${value}">
                     <td>${item.user}</td>
                     <td>${item.score}</td>
                   </tr>`;
-      table[0].innerHTML+= elem;
-  }) 
+    table[0].innerHTML += elem;
+  });
 }
 
-async function asyncSetScores(user, score){
-  const placeHolder = document.querySelector('#mssg');
-  const response = await setScoresInApi(user, score);
-  placeHolder.classList.remove('show');
-  placeHolder.innerHTML = response['result'];
-  setTimeout(hideMssg,3000);
-}
-function hideMssg(){
+function hideMssg() {
   const placeHolder = document.querySelector('#mssg');
   placeHolder.classList.add('show');
 }
-export { asyncGetScores,asyncSetScores }
+async function asyncSetScores(user, score) {
+  const placeHolder = document.querySelector('#mssg');
+  const response = await setScoresInApi(user, score);
+  placeHolder.classList.remove('show');
+  placeHolder.innerHTML = response.result;
+  setTimeout(hideMssg, 3000);
+}
+export { asyncGetScores, asyncSetScores };
