@@ -1,11 +1,10 @@
-function getScoresFromApi() {
+const getScoresFromApi = () => {
   const resp = fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/XR8Xsx8fKmg97cQOTiMP/scores')
     .then((response) => response.json())
     .then((json) => json);
   return resp;
-}
-function setScoresInApi(user, score) {
-  // console.log(user +' '+ score)
+};
+const setScoresInApi = (user, score) => {
   const resp = fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/XR8Xsx8fKmg97cQOTiMP/scores', {
     method: 'POST',
     body: JSON.stringify({
@@ -20,9 +19,9 @@ function setScoresInApi(user, score) {
     .then((json) => json);
 
   return resp;
-}
+};
 
-async function asyncGetScores() {
+const asyncGetScores = async () => {
   // get the table in the document to place the elements
   const table = document.querySelectorAll('table');
   table[0].innerHTML = '';
@@ -37,17 +36,17 @@ async function asyncGetScores() {
                   </tr>`;
     table[0].innerHTML += elem;
   });
-}
+};
 
-function hideMssg() {
+const hideMssg = () => {
   const placeHolder = document.querySelector('#mssg');
   placeHolder.classList.add('show');
-}
-async function asyncSetScores(user, score) {
+};
+const asyncSetScores = async (user, score) => {
   const placeHolder = document.querySelector('#mssg');
   const response = await setScoresInApi(user, score);
   placeHolder.classList.remove('show');
   placeHolder.innerHTML = response.result;
   setTimeout(hideMssg, 3000);
-}
+};
 export { asyncGetScores, asyncSetScores };
