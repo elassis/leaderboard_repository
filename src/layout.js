@@ -4,22 +4,11 @@ export default function renderLayout() {
     <div class="col-1">
       <div class="c1-r1">
         <h3>Recent Scores</h3>
-        <button>Refresh</button>
+        <button id="refresh-scores">Refresh</button>
       </div>
       <div class="c1-r2">
         <table>
-          <tr>
-            <td>Name:</td>
-            <td>100</td>
-          </tr>
-          <tr>
-            <td>Name:</td>
-            <td>100</td>
-          </tr>
-          <tr>
-           <td>Name:</td>
-           <td>100</td>
-          </tr>
+          
         </table>
       </div>
     </div>
@@ -29,10 +18,11 @@ export default function renderLayout() {
       </div>
       <div>
         <form>
-          <input type="text" placeholder="Your name">
-          <input type="text" placeholder="Your score">
-          <input type="submit">
+          <input type="text" id="user" placeholder="Your name">
+          <input type="number" id="score" placeholder="Your score">
+          <input type="submit" id="save-scores">
         </form>
+        <div><p class="show" id="mssg"></p>
       </div>
     </div>
   </div>`;
