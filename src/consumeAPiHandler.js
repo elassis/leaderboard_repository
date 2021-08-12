@@ -5,7 +5,6 @@ const getScores = () => {
     if (e.target.matches('i')) {
       asyncGetScores();
     }
-    
   });
 };
 
