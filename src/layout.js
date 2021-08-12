@@ -1,10 +1,10 @@
 export default function renderLayout() {
-  const title = `<h1>Leaderboard</h1>
+  const title = `<div class="nav"><h1>Leaderboard</h1></div>
   <div class="row">
     <div class="col-1">
       <div class="c1-r1">
         <h3>Recent Scores</h3>
-        <button id="refresh-scores">Refresh</button>
+        <button id="refresh-scores"><i class="fas fa-sync"></i></button>
       </div>
       <div class="c1-r2">
         <table>

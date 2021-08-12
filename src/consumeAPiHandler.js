@@ -2,7 +2,7 @@ import { asyncGetScores, asyncSetScores } from './consumeAPI.js';
 
 const getScores = () => {
   document.addEventListener('click', (e) => {
-    if (e.target.id === 'refresh-scores') {
+    if (e.target.matches('i')) {
       asyncGetScores();
     }
   });
