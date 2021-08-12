@@ -46,11 +46,11 @@ table {
   background-color: #fff;
 }
 
-tr:nth-child(even) {
+#even {
   background-color: #e0e0e0;
 }
 
-tr:nth-child(odd) {
+#odd {
   background-color: #fff;
 }
 
@@ -61,7 +61,8 @@ form {
   box-sizing: border-box;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="number"] {
   width: 67%;
   margin: 10px auto;
   padding: 6px;
@@ -73,4 +74,17 @@ input[type="submit"] {
   width: 70px;
   display: block;
   margin: 10px auto;
+}
+
+#mssg {
+  width: 50%;
+  margin: auto;
+  background-color: rgb(91, 223, 135);
+  color: green;
+  padding: 10px;
+  text-align: center;
+}
+
+.show {
+  display: none;
 }
