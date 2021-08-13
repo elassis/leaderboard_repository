@@ -22,30 +22,51 @@ h1 {
   width: 80vw;
   display: flex;
   margin: 50px auto;
-  gap: 30px;
+  gap: 50px;
 }
 
-.col-1,
-.col-2 {
+.col-1 {
   width: 50%;
   height: 400px;
-  -webkit-box-shadow: 0 0 6px 2px rgba(82, 79, 82, 1);
-  -moz-box-shadow: 0 0 6px 2px rgba(82, 79, 82, 1);
-  box-shadow: 0 0 6px 2px rgba(82, 79, 82, 1);
+}
+
+.col-2 {
+  width: 40%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .c1-r1,
-.c1-r2,
 .c2-r1 {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.c1-r2 {
+  height: 220px;
+  overflow-y: auto;
+  -webkit-box-shadow: 0 0 27px 0 rgba(115, 109, 115, 1);
+  -moz-box-shadow: 0 0 27px 0 rgba(115, 109, 115, 1);
+  box-shadow: 0 0 27px 0 rgba(115, 109, 115, 1);
+}
+
+h3#title-form {
+  margin: 0 auto;
+  padding: 10px 0;
+  background-color: rgb(39, 115, 145);
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
 }
 
 h3 {
-  text-align: center;
-  font-size: 45px;
+  font-size: 35px;
   color: rgb(39, 115, 145);
+  margin-bottom: 20px;
 }
 
 button {
@@ -60,9 +81,13 @@ button {
 }
 
 table {
-  width: 88%;
-  border: 1px solid;
+  width: 100%;
   background-color: #fff;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
 }
 
 #even {
@@ -78,21 +103,26 @@ form {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+  padding: 20px 0;
+  border-radius: 0 0 10px 10px;
 }
 
 input[type="text"],
 input[type="number"] {
   width: 67%;
   margin: 10px auto;
-  padding: 6px;
+  padding: 10px;
   box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
 }
 
 input[type="submit"] {
   padding: 5px;
   width: 70px;
   display: block;
-  margin: 10px auto;
+  margin: auto;
 }
 
 #save-scores {

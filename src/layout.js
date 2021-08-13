@@ -3,18 +3,21 @@ export default function renderLayout() {
   <div class="row">
     <div class="col-1">
       <div class="c1-r1">
-        <h3>Recent Scores</h3>
+        <h3 class="title-recent">Recent Scores</h3>
         <button id="refresh-scores"><i class="fas fa-sync"></i></button>
       </div>
       <div class="c1-r2">
         <table>
-          
+          <tr>
+            <th>Name</th>
+            <th>Score</th>
+          </tr>              
         </table>
       </div>
     </div>
     <div class="col-2">
       <div class="c2-r1">
-        <h3>Add your score</h3>
+        <h3 id="title-form">Add your score</h3>
       </div>
       <div>
         <form>
